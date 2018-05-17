@@ -1,0 +1,370 @@
+.gearDate {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9900;
+    overflow: hidden;
+    animation-fill-mode: both
+}
+.date_ctrl {
+    vertical-align: middle;
+    background-color: white;
+    color: #000;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 9901;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0)
+}
+.slideInUp {
+    animation: slideInUp .3s;
+}
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0)
+    }
+    to {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+.ym_roll,
+.date_roll,
+.datetime_roll,
+.time_roll {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: transparent;
+    -webkit-mask: -webkit-gradient(linear, 0% 50%, 0% 100%, from(#debb47), to(rgba(36, 142, 36, 0)));
+    -webkit-mask: -webkit-linear-gradient(top, #debb47 50%, rgba(36, 142, 36, 0))
+}
+
+.ym_roll>div,
+.date_roll>div,
+.datetime_roll>div,
+.time_roll>div {
+    font-size: 2.3em;
+    height: 10em;
+    float: left;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    flex: 4
+}
+
+.ym_roll>div .gear,
+.date_roll>div .gear,
+.datetime_roll>div .gear,
+.time_roll>div .gear {
+    width: 100%;
+    float: left;
+    position: absolute;
+    z-index: 9902;
+    margin-top: -4em
+}
+
+.date_roll_mask {
+    -webkit-mask: -webkit-gradient(linear, 0% 40%, 0% 0%, from(#debb47), to(rgba(36, 142, 36, 0)));
+    -webkit-mask: -webkit-linear-gradient(bottom, #debb47 50%, rgba(36, 142, 36, 0));
+    padding: 0
+}
+
+.date_roll>div:nth-child(2) {
+    flex: 2
+}
+
+.date_roll>div:nth-child(1),
+.datetime_roll>div:nth-child(1) {
+    flex: 4
+}
+
+.datetime_roll>div:first-child {
+    flex: 6
+}
+
+.datetime_roll>div:last-child {
+    flex: 6
+}
+
+.date_grid {
+    position: relative;
+    top: 4em;
+    width: 100%;
+    height: 2em;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 0;
+    border-top: 1px solid #abaeb5;
+    border-bottom: 1px solid #abaeb5
+}
+
+.date_grid>div {
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: .8em;
+    line-height: 2.5em
+}
+
+.date_roll>div:nth-child(3) .date_grid>div {
+    left: 42%
+}
+
+.datetime_roll>div .date_grid>div {
+    right: 0
+}
+
+.datetime_roll>div:first-child .date_grid>div {
+    left: auto;
+    right: 0%
+}
+
+.datetime_roll>div:last-child .date_grid>div {
+    left: 50%
+}
+
+.time_roll>div:nth-child(1) .date_grid>div {
+    right: 1em
+}
+
+.ym_roll>div:nth-child(1) .date_grid>div {
+    right: .1em
+}
+
+.ym_roll>div .date_grid>div,
+.time_roll>div .date_grid>div {
+    right: 5em
+}
+
+.date_btn {
+   background: #48acf8;
+	color: #fff;
+	border-radius: 0.08rem;
+	font-size: 1.6em;
+	line-height: 1em;
+	text-align: center;
+	padding: .6em 1em;
+}
+
+.date_btn_box:before,
+.date_btn_box:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    display: block;
+    z-index: 15;
+    transform: scaleY(0.33)
+}
+
+.date_btn_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative
+}
+
+.date_btn_box:before {
+    left: 0;
+    top: 0;
+    transform-origin: 50% 20%
+}
+
+.date_btn_box:after {
+    left: 0;
+    bottom: 0;
+    transform-origin: 50% 70%
+}
+
+.date_roll>div:nth-child(1) .gear {
+    text-indent: 20%
+}
+
+.date_roll>div:nth-child(2) .gear {
+    text-indent: -20%
+}
+
+.date_roll>div:nth-child(3) .gear {
+    text-indent: -55%
+}
+
+.datetime_roll>div .gear {
+    width: 100%;
+    text-indent: -25%
+}
+
+.datetime_roll>div:first-child .gear {
+    text-indent: -10%
+}
+
+.datetime_roll>div:last-child .gear {
+    text-indent: -50%
+}
+
+.ym_roll>div .gear,
+.time_roll>div .gear {
+    width: 100%;
+    text-indent: -70%
+}
+
+.ym_roll>div:nth-child(1) .gear,
+.time_roll>div:nth-child(1) .gear {
+    width: 100%;
+    text-indent: 10%
+}
+
+.tooth {
+    height: 2em;
+    line-height: 2em;
+    text-align: center
+}
+
+
+.btn-app-parent{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    display: none;
+}
+#btnApp{
+    border: 0.02rem solid #49ACF6;
+    text-align: center;
+    line-height: 0.6rem;
+    color: #ffffff;
+    border-radius: 0.1rem;
+    background-color: #49ACF6;
+}
+#btnApp:active{
+    color: #49ACF6;
+    background-color: #ffffff;
+}
+
+
+.previous{
+    display: none;
+    font-size: 0.36rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    top: 0;
+    text-align: center;
+    line-height: 0.6rem;
+    background: url('../../img/icon_previous.png') no-repeat;
+    background-size: 100% 100%;
+}
+.next{
+    display: none;
+    font-size: 0.36rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: auto;     
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+    top: 0;
+    text-align: center;
+    line-height: 0.6rem;
+    background: url('../../img/icon_nexts.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+/*提交工单按钮*/
+#content div#button p{
+    width: 2rem;
+    display: inline-block;
+    height: 0.6rem;
+    border: 1px solid #009DD9;
+    background-color: #009DD9;
+    text-align: center;
+    font-size: 0.36rem;
+    color: white;
+    line-height: 0.6rem;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+#content div#button p:active{
+    border: 1px solid #568AF1;
+    background-color: #568AF1;
+}
+.column{
+    flex-direction: column;
+}
+.font_right{
+    font-size: 0.28rem;
+    text-align: right;
+    line-height: 0.5rem;
+    flex: 1;
+    -webkit-flex: 1;
+    color: #49ACF6;
+}
+.description_style{
+    border: 1px solid #dddddd;
+    min-height: 3rem;
+    text-indent: 0.1rem;
+    margin-top: 0.2rem;
+    color: #49ACF6;
+    font-size: 0.3rem;
+    width: 100%;
+    padding-top: 0.1rem;
+}
+.comnomWidth{
+    width: 2.8rem;
+    white-space: nowrap;
+}
+.border_bottom{
+    border-bottom: 1px solid #dddddd;
+}
+.select_borderNone{
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../../img/icon_drop_down.png) no-repeat scroll right center transparent;
+    color: #49ACF6;
+    background-size: 15px 8px;
+    outline: none;
+}
+.normal_content p span ,.danger_content  p span{
+    color: #999999;
+}
+.select2-results__option,
+.select2-selection__choice {
+    font-size: 20px !important;
+}
+.select2-search__field {
+    font-size: 20px !important;
+}
+#select2-launchPerson-container,
+.select2-selection__placeholder {
+    font-size: 16px;
+}
+.layui-layer-btn0,
+.layui-layer-btn1 {
+    font-size: 0.36rem;
+}
+
+.align-items{
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.lowast{
+    color: red;
+}
